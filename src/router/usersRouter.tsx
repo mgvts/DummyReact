@@ -5,10 +5,10 @@ const Users = lazy(() => import('../pages/users/UsersPage'));
 const UsersId = lazy(() => import('../pages/users/UsersId'));
 
 export const usersRoutes = {
-    path: '/users',
+    path: 'users',
     element: <UsersIndex />,
     children: [
         { index: true, element: <Users /> },
-        { path: '/:id', element: <UsersId /> },
+        { path: ':id', element: <UsersId /> },
     ],
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {AppRouter} from "./router/AppRouter";
-import {BrowserRouter, Link} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 import SideBar from "./components/SideBar";
 
 
@@ -33,8 +33,10 @@ const PageWrapper = styled.main`
 `
 
 function App() {
+    // @ts-ignore
+    const basename = import.meta.env.MODE == 'development' ? '/' : '/DummyReact'
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={basename}>
             <AppWrapper>
                 <SideBar/>
                 <PageWrapper>
