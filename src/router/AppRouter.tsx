@@ -9,6 +9,7 @@ export function AppRouter() {
         <Suspense fallback={<Loader/>}>
             <Routes>
                 <Route
+
                     index
                     element={<About/>}
                 />

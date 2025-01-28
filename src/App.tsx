@@ -34,7 +34,7 @@ const PageWrapper = styled.main`
 
 function App() {
     // @ts-ignore
-    const basename = import.meta.env.MODE == 'development' ? '/' : '/DummyReact'
+    const basename = import.meta.env.MODE == 'development' ? '' : 'DummyReact'
     return (
         <BrowserRouter basename={basename}>
             <AppWrapper>
