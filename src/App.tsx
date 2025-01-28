@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {AppRouter} from "./router/AppRouter";
-import {BrowserRouter} from "react-router-dom";
+import {HashRouter} from "react-router-dom";
 import SideBar from "./components/SideBar";
 
 
@@ -17,7 +17,7 @@ const AppWrapper = styled.div`
 const PageWrapper = styled.main`
     height: 100vh;
     overflow: auto;
-    
+
     width: 1200px;
     margin-left: auto;
     margin-right: calc((100vw - 80px - 1200px) / 2);
@@ -36,14 +36,14 @@ function App() {
     // @ts-ignore
     const basename = import.meta.env.MODE == 'development' ? '' : 'DummyReact'
     return (
-        <BrowserRouter basename={basename}>
+        <HashRouter basename={basename}>
             <AppWrapper>
                 <SideBar/>
                 <PageWrapper>
                     <AppRouter/>
                 </PageWrapper>
             </AppWrapper>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
