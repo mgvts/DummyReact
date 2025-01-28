@@ -37,7 +37,6 @@ const InfoLayout = <T, L extends Base>(
         isLoading: isListLoading,
         error: listError
     } = listHook();
-    console.log(listData, isListLoading)
 
     useEffect(() => {
         loadNextPage();
