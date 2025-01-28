@@ -1,17 +1,13 @@
 import {useState, KeyboardEvent} from "react";
 import type {FC} from "react"
-import TextField from "../UI/TextField";
-import {SortPostOption} from "../../types";
-import {Col} from "../UI/List";
+import TextField from "./UI/TextField";
+import {Col} from "./UI/List";
 import styled from "styled-components";
-import Chip from "../UI/Chip";
+import Chip from "./UI/Chip";
 
 
-interface PostsHeaderProps {
-    // sortOption: SortPostOption;
-    query?: string
-    setQuery: (query: string) => void
-    onChange?: (query: string) => void
+interface SearchHeaderProps {
+    onSearch?: (query: string) => void
     total?: number
 }
 
@@ -22,12 +18,14 @@ const HeaderWrapper = styled(Col).attrs({$gap: "20px"})`
     border-radius: 0 0 10px 10px;
 `
 
-const PostsHeader: FC<PostsHeaderProps> = ({query, setQuery, onChange, total}) => {
+const SearchHeader: FC<SearchHeaderProps> = ({onSearch,  total}) => {
+    if (!onSearch) return <div />
+
     const [localQuery, setLocalQuery] = useState('');
 
     const handleEnter = (e: KeyboardEvent) => {
         if (e.key === "Enter") {
-            return setQuery(localQuery);
+            return onSearch(localQuery);
         }
     }
 
@@ -46,4 +44,4 @@ const PostsHeader: FC<PostsHeaderProps> = ({query, setQuery, onChange, total}) =
     )
 };
 
-export default PostsHeader;
+export default SearchHeader;

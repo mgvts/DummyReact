@@ -1,71 +1,56 @@
-import React, {useEffect, useState} from "react";
+import React, {FC, useEffect} from "react";
 import {useParams} from "react-router-dom";
-import {useFetching} from "../../hooks/useFetching";
 import {PostService} from "../../api/PostService";
 import {UserService} from "../../api/UserService";
-import Loader from "../../components/UI/Loader";
-import PostList from "../../components/posts/PostList";
-import {FullUser, Post} from "../../api/types";
-import {Nullable} from "../../types";
+import InfoLayout from "../../layouts/InfoLayout";
+import {useResource} from "../../hooks/core/useResource";
+import {usePaginatedResource} from "../../hooks/core/usePaginatedResource";
+import PostInline from "../../components/posts/PostInline";
+import UserInfo from "../../components/users/UserInfo";
 
 interface UsersIdProps {
 
 }
 
-const UsersId: React.FC<UsersIdProps> = ({}) => {
-    const params = useParams();
-    const [user, setUser] = useState<Nullable<FullUser>>(null);
-    const [userPosts, setUserPosts] = useState<Post[]>([]);
+const UsersId: FC<UsersIdProps> = ({}) => {
+    const {id} = useParams();
+    const userInfo = useResource(
+        (id) => UserService.getById(id),
+    );
 
-    const [fetchUserById, isLoadingUser] = useFetching(async (id: string) => {
-        const user = await UserService.getById(id);
-        setUser(user);
-    });
-    const [fetchPosts, isLoadingPosts] = useFetching(async (id: string) => {
-        const response = await PostService.getByUserId(id);
-        setUserPosts(response.posts);
-    });
+    const postsList = usePaginatedResource(
+        async (params) => {
+            const response = await PostService.getByUserId(id!, params)
+            return {
+                data: response.posts,
+                total: response.info.total,
+            }
+        },
+        {enableSearch: false}
+    );
+
     useEffect(() => {
-        if (params.id) {
-            fetchUserById(params.id);
-            fetchPosts(params.id)
+        const initFetcher = async () => {
+            if (id) await userInfo.fetchData(id)
         }
-    }, [params.id]);
+        initFetcher()
+    }, []);
 
     return (
-        <div>
-            <h1>User ID: {params.id}</h1>
-            {isLoadingUser || !user ?
-                <Loader/>
-                : (
-                    <div>
-                        <div>
-                            <ul>
-                                <li>
-                                    id: {user.id}
-                                </li>
-                                <li>
-                                    name: {user.firstName} {user.lastName}
-                                </li>
-                                <li>
-                                    username: {user.username}
-                                </li>
-                            </ul>
-                        </div>
-                        <h3>Posts</h3>
-                        <div>
-                            <PostList
-                                posts={userPosts}
-                                fetchPosts={() => {
-                                }}
-                                hasMore={false}
-                                endMessage={<div/>}
-                            />
-                        </div>
-                    </div>
-                )
-            }
-        </div>
+        <InfoLayout
+            infoHook={() => ({
+                isLoading: userInfo.isLoading,
+                error: userInfo.error,
+                data: userInfo
+            })}
+            listHook={() => postsList}
+            InfoComponent={<UserInfo
+                user={userInfo.data}
+            />}
+            ListComponent={PostInline}
+            dependencies={[id]}
+            emptyListMsg='No posts yet'
+        />
     )
 };
 

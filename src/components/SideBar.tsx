@@ -46,7 +46,7 @@ const SideBar: React.FC<SideBarProps> = ({}) => {
     const links = [
         { title: 'Posts', to: '/posts', img: <FaNewspaper color={iconColor} size={iconSize} /> },
         { title: 'About', to: '/about', img: <FaHome color={iconColor} size={iconSize} /> },
-        { title: 'Users', to: '/users', img: <FaUsers color={iconColor} size={iconSize} /> }
+        { title: 'UsersPage', to: '/users', img: <FaUsers color={iconColor} size={iconSize} /> }
     ];
     const [isActive, setIsActive] = useState(false);
     const pathName = useLocation().pathname;

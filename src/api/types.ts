@@ -14,6 +14,8 @@ export type ApiResponse<T, K extends string> = BaseApiResponse<T, K> & {
 
 export type PostsResponse = ApiResponse<Post, 'posts'>;
 export type CommentsResponse = ApiResponse<Comment, 'comments'>;
+export type UsersResponse = ApiResponse<User, 'users'>;
+export type FullUsersResponse = ApiResponse<FullUser, 'users'>;
 
 
 export interface Base {
@@ -23,12 +25,19 @@ export interface Base {
 
 export interface User extends Base {
     username: string
+    firstName: string
+    lastName: string
+    age:number
+    company: {
+        name: string
+    }
+    address: {
+        country: string
+    }
 }
 
 export interface FullUser extends User {
-    firstName: string,
-    lastName: string,
-    age: number
+
 }
 
 

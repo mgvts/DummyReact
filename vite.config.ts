@@ -2,8 +2,8 @@ import {defineConfig} from "vite";
 import react from '@vitejs/plugin-react'
 import {fileURLToPath, URL} from 'node:url'
 
-export default defineConfig({
-    base: 'DummyReact',
+export default defineConfig(({mode}) => ({
+    base: mode == 'development' ? '/' : '/DummyReact',
     plugins: [
         react({
             include: /\.(mdx|js|jsx|ts|tsx)$/
@@ -17,4 +17,4 @@ export default defineConfig({
     server: {
         port: 3000
     }
-})
+}))

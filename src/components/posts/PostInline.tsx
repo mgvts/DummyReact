@@ -1,12 +1,11 @@
 import React from "react";
 import Card from "../Card";
-import {Post} from "../../types";
-import Btn from "../UI/Btn";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import styled from "styled-components";
+import {Post} from "../../api/types";
 
 interface PostInlineProps {
-    post: Post
+    data: Post
 }
 
 const PostTitle = styled.h4`
@@ -23,31 +22,20 @@ const PostBody = styled.div`
     -webkit-box-orient: vertical;
 `
 
-const PostInline: React.FC<PostInlineProps> = ({post}) => {
-    const navigate = useNavigate()
+const PostInline: React.FC<PostInlineProps> = ({data: post}) => {
     return (
         <Card>
             <Link
                 style={{width: 'fit-content'}}
                 to={`/posts/${post.id}`}
             >
-
                 <PostTitle className="link-animate">
                     {post.title}
                 </PostTitle>
             </Link>
-
-
             <PostBody>
                 {post.body}
             </PostBody>
-            {/*<div>*/}
-            {/*<Btn*/}
-            {/*    text="Open"*/}
-            {/*    variant="primary"*/}
-            {/*    onClick={}*/}
-            {/*/>*/}
-            {/*</div>*/}
         </Card>
     )
 };

@@ -27,7 +27,7 @@ const sizeStyles = {
   `,
 };
 
-const BtnWrapper = styled.button<BtnWrapperProps>`
+const BtnWrapper = styled.button<ButtonProps<BtnWrapperProps>>`
     display: inline-block;
     border-radius: 5px;
     border: 2px solid transparent;

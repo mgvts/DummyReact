@@ -28,7 +28,7 @@ export class PostService extends BaseService {
         return this.getList<Post, 'posts'>(`/search?q=${query}`, {params});
     }
 
-    static async getByUserId(userId: number, params = BASE_INFO): Promise<PostsResponse> {
+    static async getByUserId(userId: Post['userId'], params = BASE_INFO): Promise<PostsResponse> {
         return this.getList<Post, 'posts'>(`/user/${userId}`, {params});
     }
 
