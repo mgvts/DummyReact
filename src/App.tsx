@@ -33,10 +33,8 @@ const PageWrapper = styled.main`
 `
 
 function App() {
-    // @ts-ignore
-    const basename = import.meta.env.MODE == 'development' ? '' : 'DummyReact'
     return (
-        <HashRouter basename={basename}>
+        <HashRouter>
             <AppWrapper>
                 <SideBar/>
                 <PageWrapper>
