@@ -1,5 +1,5 @@
 {
-  "name": "myapp",
+  "name": "dummy-react",
   "homepage": "https://mgvts.github.io/DummyReact",
   "version": "0.1.0",
   "private": true,
@@ -37,6 +37,6 @@
     "style-loader": "^4.0.0",
     "styled-components": "^6.1.13",
     "ts-loader": "^9.5.1",
-    "vite": "^6.0.7"
+    "vite": "6.0.9"
   }
 }

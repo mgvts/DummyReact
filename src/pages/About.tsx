@@ -64,7 +64,7 @@ const ListLayout = <T extends Base>({ domainHook, ListElement }: ListLayoutProps
                 <h3>Some Features</h3>
                 <div>
                     <h4>Hook for pagination</h4>
-                    create self hook for pagination with api call (fetcher) and options
+                    Created self hook for pagination with api call (fetcher) and options.
                     <pre>{codeExamples.paginationHook}</pre>
                     more types are in <ULink
                     to="https://github.com/mgvts/DummyReact/blob/master/src/hooks/core/usePaginatedResource.ts">source
@@ -82,7 +82,7 @@ const ListLayout = <T extends Base>({ domainHook, ListElement }: ListLayoutProps
                         to='https://github.com/mgvts/DummyReact/blob/master/src/pages/users/UsersPage.tsx'>git</ULink>)
                     </span>
                     <br/>
-                    Component which combined search header with api calls (must use instance of usePaginatedResource
+                    Component which combines search header with api calls (must use instance of usePaginatedResource
                     hook) and logic with render lists
                 </div>
                 <div>
@@ -113,11 +113,11 @@ const ListLayout = <T extends Base>({ domainHook, ListElement }: ListLayoutProps
                         to='https://github.com/mgvts/DummyReact/blob/master/src/pages/users/UsersId.tsx'>git</ULink>)
                     </span>
                     <br/>
-                    Similar with ListLayout but  needed separated elements for header and list
-                    and also hooks for its.
+                    Similar with ListLayout but demands separated elements for header and list
+                    and also hooks for them.
                 </div>
                 <pre>
-                        {codeExamples.infoLayout}
+                    {codeExamples.infoLayout}
                 </pre>
             </Text>
             <Text>
