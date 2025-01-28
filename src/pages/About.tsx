@@ -82,7 +82,7 @@ const ListLayout = <T extends Base>({ domainHook, ListElement }: ListLayoutProps
                         to='https://github.com/mgvts/DummyReact/blob/master/src/pages/users/UsersPage.tsx'>git</ULink>)
                     </span>
                     <br/>
-                    Component which combines search header with api calls (must use instance of usePaginatedResource
+                    Component which combines search header with api calls (must use instance (closure) of usePaginatedResource
                     hook) and logic with render lists
                 </div>
                 <div>
