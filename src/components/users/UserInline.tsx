@@ -1,7 +1,6 @@
 import React, {FC} from "react";
 import {User} from "../../api/types";
 import {Link} from "react-router-dom";
-import {relative} from "../../util/relative";
 import styled from "styled-components";
 import Card from "../Card";
 
@@ -14,7 +13,7 @@ const Body = styled.div`
 const UserInline: FC<UserInlineProps> = ({data: user}) => {
     return (
         <Card>
-            <Link to={relative(`/${user.id}`)}>
+            <Link to={`/users/${user.id}`}>
                 <span className='link-animate'>
                     {user.firstName}&nbsp;{user.lastName}&nbsp;[{user.username}]
                 </span>

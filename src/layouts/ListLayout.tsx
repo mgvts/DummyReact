@@ -42,7 +42,7 @@ const ListLayout = <T extends Base>({ domainHook, ListElement }: ListLayoutProps
                     fetchItems={loadNextPage}
                     hasMore={hasMore}
                     length={data.length}
-                    height={`100vh`}
+                    height={`100vh - 120px`}
                 >
                     {data.map((dt, index) => (
                         <ListElement

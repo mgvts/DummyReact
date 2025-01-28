@@ -7,7 +7,7 @@ export class UserService extends BaseService {
     protected static BASE_PATH = '/users'
     protected static CONFIG = {
         params: {
-            select: `id,username,firstName,lastName,age,company,address`
+            select: `id,username,firstName,lastName,age,company,address,image`
         },
     }
 
@@ -15,12 +15,8 @@ export class UserService extends BaseService {
         return this.getList<User, 'users'>('', {params})
     }
 
-    static async getById(id: User['id'], params = {}): Promise<FullUser> {
-        return await this.get(this.BASE_PATH + `/${id}`, {
-            params: {
-                select: `id,firstName,lastName,username,age`
-            }
-        }) as FullUser
+    static async getById(id: User['id'], params = this.CONFIG): Promise<FullUser> {
+        return await this.get(this.BASE_PATH + `/${id}`, params) as FullUser
     }
 
     static async getSearch(query: string, params = {limit: 30, skip: 0}): Promise<UsersResponse> {

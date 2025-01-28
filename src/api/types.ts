@@ -27,17 +27,32 @@ export interface User extends Base {
     username: string
     firstName: string
     lastName: string
-    age:number
-    company: {
-        name: string
-    }
-    address: {
-        country: string
-    }
+    age: number
+    company: Pick<UserCompany, 'name'>
+    address: Pick<Address, 'country'>
 }
 
-export interface FullUser extends User {
+interface Address {
+    address: string
+    country: string
+    city: string
+    state: string
+    postalCode: string
+}
 
+interface UserCompany {
+    department: string
+    name: string
+    address: Address
+    title: string
+    city: string
+}
+
+
+export interface FullUser extends User {
+    company: UserCompany
+    address: Address
+    image: string
 }
 
 
