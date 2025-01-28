@@ -1,11 +1,7 @@
-## this is md
+# Dummy React
 
-### hey hey
-- 1
-- 2
-- 3
-- 4
-- 5
+My try to create React app
 
+Get posts/users from [DummyJson](https://dummyjson.com/) and represent its
 ---
-qwe
+More info at [ghpages](https://mgvts.github.io/DummyReact/#/about) and source files
