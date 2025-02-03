@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from "react";
+import {FC, useEffect, useState} from "react";
 import {FullUser} from "../../api/types";
 import Card from "../Card";
 import {Nullable} from "../../types";

@@ -1,7 +1,7 @@
-import React from "react";
 import {AiFillLike, AiOutlineLike} from "react-icons/ai";
 import styled from "styled-components";
 import {Row} from "./List";
+import {FC, useState} from "react";
 
 interface LikeProps {
     value: number
@@ -10,8 +10,8 @@ interface LikeProps {
 const LikeWrapper = styled(Row).attrs({$align: "center", $gap: '4px', $justify: 'center'})`
     font-weight: 500`
 
-const Like: React.FC<LikeProps> = ({value}) => {
-    const [isLiked, setIsLiked] = React.useState(false);
+const Like: FC<LikeProps> = ({value}) => {
+    const [isLiked, setIsLiked] = useState(false);
     return (
         <LikeWrapper title="No backend effect">
             <div style={{height: 'fit-content'}}>

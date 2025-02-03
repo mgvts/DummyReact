@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import React from "react";
 import {Row} from "./List";
+import {FC} from "react";
 
 interface LoaderProps {
 }
@@ -25,7 +25,7 @@ const LoaderWrapper = styled.span`
     }
 `
 
-const Loader: React.FC<LoaderProps> = () => {
+const Loader: FC<LoaderProps> = () => {
     // 68 to prevent additional scroller in list also 48*sqrt(2)
     return <Row $align='center' $justify='center' style={{height:'68px', }}>
         <LoaderWrapper />

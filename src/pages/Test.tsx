@@ -1,13 +1,12 @@
-import React from "react";
-import styled from "styled-components";
 import './test.css';
+import {FC} from "react";
 
 interface TestProps {
 
 }
 
 
-const Test: React.FC<TestProps> = ({}) => {
+const Test: FC<TestProps> = ({}) => {
     return (
         <>
             <div className="Content">

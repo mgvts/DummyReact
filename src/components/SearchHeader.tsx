@@ -32,6 +32,7 @@ const SearchHeader: FC<SearchHeaderProps> = ({onSearch,  total}) => {
     return (
         <HeaderWrapper>
             <TextField
+                type="search"
                 placeholder="query..."
                 value={localQuery}
                 onChange={setLocalQuery}

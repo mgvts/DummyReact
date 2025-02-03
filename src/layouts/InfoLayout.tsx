@@ -1,5 +1,4 @@
-// layouts/InfoLayout.tsx
-import React, {FC, ReactNode, useEffect} from "react";
+import  {FC, ReactNode, useEffect} from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import {Base} from "../api/types";
 import {ResourceState} from "../hooks/core/useResource";

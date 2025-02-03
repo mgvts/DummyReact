@@ -1,9 +1,7 @@
-import React from "react";
 import type {Comment} from "../../api/types";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
 import Card from "../Card";
-import {AiFillLike} from "react-icons/ai";
 import {Row} from "../UI/List";
 import Like from "../UI/Like";
 import Loader from "../UI/Loader";
@@ -27,7 +25,7 @@ const CommentFooter = styled(Row).attrs({$align: "center"})`
     }
 `
 
-const CommentInline: React.FC<CommentInlineProps> = ({data: comment,}) => {
+const CommentInline: FC<CommentInlineProps> = ({data: comment,}) => {
     if (!comment) return <Loader/>;
     return (
         <CommentWrapper>

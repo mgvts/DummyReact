@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import {AppRouter} from "./router/AppRouter";
 import {HashRouter} from "react-router-dom";

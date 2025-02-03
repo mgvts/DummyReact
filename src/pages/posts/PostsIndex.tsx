@@ -1,6 +1,6 @@
-import React from "react";
 import {Outlet} from "react-router-dom";
 import styled from "styled-components";
+import {FC} from "react";
 
 interface indexProps {
 
@@ -10,7 +10,7 @@ interface indexProps {
 const PostsWrapper = styled.div`
 `
 
-const PostsIndex: React.FC<indexProps> = ({}) => {
+const PostsIndex: FC<indexProps> = ({}) => {
     return (
         <PostsWrapper>
             <Outlet />

@@ -1,4 +1,4 @@
-import React, {FC, useEffect} from "react";
+import {FC, useEffect} from "react";
 import {useParams} from "react-router-dom";
 import {PostService} from "../../api/PostService";
 import {UserService} from "../../api/UserService";

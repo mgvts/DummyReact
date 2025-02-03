@@ -1,8 +1,8 @@
-import React from "react";
 import styled from "styled-components";
+import {FC, ReactNode} from "react";
 
 interface CardProps {
-    children?: React.ReactNode;
+    children?: ReactNode;
     $flat?: boolean
 }
 
@@ -21,7 +21,7 @@ const CardBox = styled.div<Omit<CardProps, 'children'>>`
     }
 `;
 
-const Card: React.FC<CardProps> = ({children, $flat}) => {
+const Card: FC<CardProps> = ({children, $flat}) => {
     return (
         <CardWrapper>
             <CardBox $flat={$flat}>

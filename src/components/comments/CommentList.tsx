@@ -1,7 +1,7 @@
-import React, {FC} from "react";
-import {Col, Row, ScrollableList} from "../UI/List";
+import {Col, ScrollableList} from "../UI/List";
 import CommentInline from "./CommentInline";
 import {Comment} from "../../api/types";
+import {FC} from "react";
 
 interface CommentListProps {
     comments: Comment[]

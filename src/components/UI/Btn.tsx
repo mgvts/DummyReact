@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import React from "react";
 import { ButtonProps } from "../../types";
+import {FC} from "react";
 
 interface BtnWrapperProps {
     variant?: "primary" | "normal";
-    onClick?: (e?: React.MouseEvent) => void;
+    onClick?: (e?: MouseEvent) => void;
     size?: "small" | "medium" | "large"; // Размер кнопки
 }
 
@@ -55,7 +55,7 @@ const BtnWrapper = styled.button<ButtonProps<BtnWrapperProps>>`
     ${(props) => sizeStyles[props.size || "medium"]}; // Применение стилей для размера
 `;
 
-const Btn: React.FC<ButtonProps<BtnProps>> = ({
+const Btn: FC<ButtonProps<BtnProps>> = ({
                                                   text,
                                                   size = "medium",
                                                   variant = "primary",

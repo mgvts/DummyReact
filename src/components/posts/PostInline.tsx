@@ -1,8 +1,8 @@
-import React from "react";
 import Card from "../Card";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
 import {Post} from "../../api/types";
+import {FC} from "react";
 
 interface PostInlineProps {
     data: Post
@@ -22,7 +22,7 @@ const PostBody = styled.div`
     -webkit-box-orient: vertical;
 `
 
-const PostInline: React.FC<PostInlineProps> = ({data: post}) => {
+const PostInline: FC<PostInlineProps> = ({data: post}) => {
     return (
         <Card>
             <Link

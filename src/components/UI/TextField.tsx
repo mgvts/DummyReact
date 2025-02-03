@@ -49,7 +49,6 @@ const TextField: FC<InputProps<TextFieldProps>> = ({value, onChange, ...rest}) =
         <TextFieldWrapper>
             <InputWrapper>
                 <Input
-                    title="todo: fix sizes"
                     {...rest}
                     value={value}
                     onChange={(e) => onChange(e.target.value)}

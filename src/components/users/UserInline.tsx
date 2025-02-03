@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import {FC} from "react";
 import {User} from "../../api/types";
 import {Link} from "react-router-dom";
 import styled from "styled-components";

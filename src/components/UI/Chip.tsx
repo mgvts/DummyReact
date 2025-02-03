@@ -1,5 +1,5 @@
-import React from "react";
 import styled from "styled-components";
+import {FC} from "react";
 
 interface ChipProps {
     value: string | number
@@ -18,7 +18,7 @@ const ChipWrapper = styled.span`
     color: white;
 `
 
-const Chip: React.FC<ChipProps> = ({value, title}) => {
+const Chip: FC<ChipProps> = ({value, title}) => {
     return (
         <ChipWrapper title={title}>
             {value}
